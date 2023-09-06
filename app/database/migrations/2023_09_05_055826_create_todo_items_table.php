@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('todo_items', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('user_id')    //外部キーの追加
+                ->constrained()
+                ->cascadeOnUpdate() //親テーブルの更新時に子テーブルも更新
+                ->cascadeOnDelete();
+            $table->text('title');
+            $table->boolean('is_done')->default(false);
+
             $table->timestamps();
         });
     }
