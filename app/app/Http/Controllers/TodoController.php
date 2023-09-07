@@ -6,7 +6,7 @@ use App\Models\TodoItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class TodoContoller extends Controller
+class TodoController extends Controller
 {
     //TodoControllerの認証を有効にする
     public function __construct()
